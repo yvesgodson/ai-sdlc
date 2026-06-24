@@ -1,0 +1,11 @@
+# Fichiers sources lourds (input, non versionnés)
+docs/*.pdf
+
+# Réglages locaux machine (ne pas partager)
+.claude/settings.local.json
+
+# Fichiers temporaires
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
