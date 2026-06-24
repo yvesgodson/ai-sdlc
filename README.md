@@ -38,4 +38,4 @@ Pour réutiliser ces skills dans un autre projet, copiez les dossiers voulus dan
 
 Ouvrez **`Cours-AI-SDLC-WAOUHMONDE.docx`** : le AI-SDLC pas à pas, avec pour chaque étape des encarts courts sur les **tokens**, les **commandes utiles** et les **subagents & loops**.
 
-> *Generation is solved. Verification, judgment, and direction are the new craft.*
+
