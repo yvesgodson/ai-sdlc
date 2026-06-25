@@ -33,3 +33,6 @@ Consomme un serveur MCP existant plutôt qu'un wrapper. Audite-le avant accès ;
 - Gros diff inauditable.
 - Modifier les tests pour les faire passer.
 - Empiler des correctifs sur une mauvaise base → `/rewind` et reformuler.
+
+## Skills utiles (skill-finder)
+Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : testing, TDD, code-review, refactor, debugging). Installe seulement apres accord humain.

@@ -32,3 +32,6 @@ description: Phase 4 du AI-SDLC — Test & QA. Tests déterministes + evals (LLM
 - Accepter des tests supprimés/mockés pour « passer ».
 - Juger le code sans juger le rendu (UI).
 - Garder des fausses alertes non vérifiées.
+
+## Skills utiles (skill-finder)
+Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : evals, LLM-as-judge, playwright, accessibility, security). Installe seulement apres accord humain.

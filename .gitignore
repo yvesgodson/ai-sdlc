@@ -4,6 +4,9 @@ docs/*.pdf
 # Réglages locaux machine (ne pas partager)
 .claude/settings.local.json
 
+# Projet SaaS construit avec la methode (depot git independant, non embarque ici)
+WaouhResume/
+
 # Fichiers temporaires
 *.tmp
 ~$*

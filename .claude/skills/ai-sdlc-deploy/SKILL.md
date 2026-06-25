@@ -29,3 +29,6 @@ Déploiement prod, changement de schéma BDD, transaction financière, suppressi
 - Mettre les règles de sécurité uniquement dans le prompt (utiliser des hooks).
 - Donner à l'agent les droits admin du développeur.
 - Déployer sans plan de rollback.
+
+## Skills utiles (skill-finder)
+Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : CI/CD, vercel, docker, release, changelog). Installe seulement apres accord humain.

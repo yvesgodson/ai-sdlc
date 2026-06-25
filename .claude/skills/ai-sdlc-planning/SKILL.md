@@ -28,3 +28,6 @@ description: Phase 1 du AI-SDLC — Planification. Transforme une intention mét
 - Laisser une ambiguïté « pour plus tard ».
 - Spec qui ne couvre que le chemin heureux.
 - Décision d'architecture sans ADR.
+
+## Skills utiles (skill-finder)
+Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : specs, gherkin, PRD, product brief). Installe seulement apres accord humain.

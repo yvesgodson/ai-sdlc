@@ -50,3 +50,6 @@ Arrête-toi et demande une décision humaine si :
 - une boucle atteint son plafond sans converger ;
 - un hook bloque une action ;
 - tu vas modifier des tests, supprimer du code non créé par la session, ou installer une dépendance non épinglée.
+
+## Outils — skill-finder
+A chaque phase, si un besoin d'outillage emerge (UI, tests, CI, doc...), invoque la skill `skill-finder` pour chercher une skill existante sur skills.sh (leaderboard + `npx skills find`). Montre-la et demande l'accord avant `npx skills add`.

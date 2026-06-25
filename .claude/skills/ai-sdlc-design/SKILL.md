@@ -32,3 +32,6 @@ description: Phase 2 du AI-SDLC — Design. Architecture, ADR, contrats d'API, e
 - Décider l'architecture à la place de l'humain.
 - Réinterpréter une maquette par capture au lieu du handoff/MCP.
 - Rendu générique sans le design system.
+
+## Skills utiles (skill-finder)
+Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : design system, frontend-design, architecture, figma). Installe seulement apres accord humain.

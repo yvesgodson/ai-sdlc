@@ -43,3 +43,6 @@ Trace d'audit immuable (action ↔ agent ↔ humain ayant approuvé), disjoncteu
 - Migration « big bang » sans pipeline ni tests par étape.
 - Corriger l'instance sans corriger la cause.
 - Tronquer silencieusement une migration.
+
+## Skills utiles (skill-finder)
+Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : observability, monitoring, documentation, migration). Installe seulement apres accord humain.

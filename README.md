@@ -25,6 +25,9 @@ docs/generate-docs.md           # le brief d'origine
 | `cadrage-spec` | Rédige une spec au format maison dans `specs/` |
 | `vibe-diff` | Revue d'intention avant fusion : mappe le diff aux critères d'acceptation |
 | `doc-vivante` | Met à jour README/CHANGELOG depuis les commits |
+| `skill-finder` | Trouve/installe des skills sur skills.sh selon le besoin de chaque étape du AI-SDLC |
+
+Chaque skill de phase renvoie vers `skill-finder` : à chaque étape, Claude cherche s'il existe une skill adaptée (UI, tests, CI…) avant de coder à la main. Toutes les skills s'invoquent automatiquement selon leur `description`.
 
 ## Utilisation avec Claude Code
 
