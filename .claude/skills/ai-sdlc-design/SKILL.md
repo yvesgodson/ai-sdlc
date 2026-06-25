@@ -34,7 +34,8 @@ dégradés violets sur blanc, layouts génériques).
   5. Preuve sociale UNIQUEMENT si réelle (avis, logos) — ne JAMAIS inventer chiffres/témoignages.
   6. FAQ (`<details>`/`<summary>` natif).
   7. CTA final + footer.
-- **Copy** : verbes d'action, orienté résultat, promesse de temps ; pas de superlatif mensonger.
+- **Copy minimal** : verbes d'action, orienté résultat, promesse de temps ; pas de superlatif mensonger. PAS de texte explicatif superflu dans l'UI — ne pas expliquer le fonctionnement interne (ex. « le texte est extrait puis structuré par l'IA… »). Microcopy courte ; au plus une ligne d'aide par champ.
+- **Contrôles natifs stylés** : jamais le rendu navigateur par défaut. Un `input[type=file]` devient une zone de dépôt (drag & drop) custom, pas « Choose File ». Idem select/checkbox/radio.
 - **Animations** : reveals au défilement (IntersectionObserver) + entrées échelonnées au chargement
   (`animation-delay`) + micro-interactions sobres. TOUJOURS respecter `prefers-reduced-motion`.
 - **Accessibilité WCAG AA** : labels associés, focus visible, contraste >= 4.5:1, clavier complet.
