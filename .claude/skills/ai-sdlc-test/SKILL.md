@@ -13,6 +13,12 @@ description: Phase 4 du AI-SDLC — Test & QA. Tests déterministes + evals (LLM
 4. Sécurité : SAST/SCA (code et dépendances vulnérables ou hallucinées), scan de secrets, red-team scriptée pour les refus.
 5. Inspection de trajectoire : bons fichiers lus d'abord ? séquence d'édition sensée ? bon outil/skill appelé ?
 
+## e2e robustes (services externes : IA, paiement)
+- **Timeouts généreux** : un appel IA réel + la compilation à froid du serveur dev dépassent les 5 s par défaut. Fixe des timeouts explicites (redirection après inscription ~20 s, appel IA ~90 s, test ~180 s).
+- **Cadence** : lance en série (`--workers=1`) les e2e qui font de VRAIS appels IA — en rafale, le fournisseur peut throttler (rate limit) et faire échouer des tests sains.
+- **Sélecteurs précis** : `getByRole("heading", { name })` plutôt que `getByText` (qui matche aussi sous-titres/placeholders → strict mode violation).
+- **Hygiène** : tuer tout serveur dev fantôme sur le port avant un run ; purger `.next` si des chunks périmés traînent (« Cannot find module './XXX.js' »).
+
 ## 7 dimensions à contrôler
 1. Intention (humain + LLM-judge). 2. Correction fonctionnelle (tests). 3. Correction visuelle/comportementale (Playwright). 4. Coût & efficacité (tokens, latence, nb d'itérations). 5. Qualité & conventions. 6. Trajectoire. 7. Auto-réparation.
 
