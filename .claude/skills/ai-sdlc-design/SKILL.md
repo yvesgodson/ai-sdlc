@@ -21,6 +21,24 @@ description: Phase 2 du AI-SDLC — Design. Architecture, ADR, contrats d'API, e
 5. Implémente avec le design system + style des composants existants. Tests visuels d'abord (Playwright + comparaison de captures), puis le code.
 6. Active la skill `frontend-design` pour un rendu de qualité.
 
+## Front-end (UI & landing de conversion)
+Active toujours la skill `frontend-design` pour le rendu. Choisis une direction esthétique
+**intentionnelle** (sobre/raffinée ou audacieuse) ; bannis les défauts d'IA (Inter/Arial,
+dégradés violets sur blanc, layouts génériques).
+- **Typo & couleur** : police distinctive, palette cohérente avec un accent net (tokens CSS).
+- **Landing orientée conversion** (modèle éprouvé, cf. resumecoach.com), dans l'ordre :
+  1. Hero : accroche bénéfice + promesse de temps (« en quelques minutes »), 2 CTA, aperçu produit.
+  2. Fonctionnalités (3 max), avantages concrets.
+  3. Comment ça marche : étapes numérotées.
+  4. Pourquoi / bénéfices (grille).
+  5. Preuve sociale UNIQUEMENT si réelle (avis, logos) — ne JAMAIS inventer chiffres/témoignages.
+  6. FAQ (`<details>`/`<summary>` natif).
+  7. CTA final + footer.
+- **Copy** : verbes d'action, orienté résultat, promesse de temps ; pas de superlatif mensonger.
+- **Animations** : reveals au défilement (IntersectionObserver) + entrées échelonnées au chargement
+  (`animation-delay`) + micro-interactions sobres. TOUJOURS respecter `prefers-reduced-motion`.
+- **Accessibilité WCAG AA** : labels associés, focus visible, contraste >= 4.5:1, clavier complet.
+
 ## Porte de sortie
 - [ ] ADR pour chaque décision structurante.
 - [ ] Contrats API, schémas BDD, modèles de données figés dans `specs/`.
