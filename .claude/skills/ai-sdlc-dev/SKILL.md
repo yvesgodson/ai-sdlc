@@ -34,5 +34,8 @@ Consomme un serveur MCP existant plutôt qu'un wrapper. Audite-le avant accès ;
 - Modifier les tests pour les faire passer.
 - Empiler des correctifs sur une mauvaise base → `/rewind` et reformuler.
 
+## Backend / API
+Pour les routes, API et services Node (App Router, route handlers), applique la skill `nodejs-backend-patterns` : validation des entrées par Zod, classes d'erreur dédiées, rate-limit, CORS non-`*`, health checks, connection pooling. Cohérent avec nos règles (pas de secret en clair, variables d'environnement, vérifier les imports).
+
 ## Skills utiles (skill-finder)
 Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : testing, TDD, code-review, refactor, debugging). Installe seulement apres accord humain.

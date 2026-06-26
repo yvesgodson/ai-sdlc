@@ -9,6 +9,7 @@ description: Phase 4 du AI-SDLC — Test & QA. Tests déterministes + evals (LLM
 ## Étapes
 1. Complète les tests déterministes depuis `@specs/` : nominal + erreurs + cas limites. Chaque test doit pouvoir échouer pour une vraie raison.
 2. Tests visuels/comportementaux (si UI) : Playwright — états vide/chargement/erreur, responsive, comparaison contre la maquette.
+   - Audit UI/accessibilité : lance la skill `web-design-guidelines` sur les fichiers d'écran rendus (revue contre les Web Interface Guidelines). Outil de REVUE, pas de génération ; traiter ses trouvailles `file:line` comme des écarts à corriger.
 3. LLM-as-judge : second appel qui note la sortie contre une rubrique de la spec (0–5 + justification) sur intention, conventions, gestion d'erreurs. Headless : `claude -p "<prompt d'éval>" --output-format json`.
 4. Sécurité : SAST/SCA (code et dépendances vulnérables ou hallucinées), scan de secrets, red-team scriptée pour les refus.
 5. Inspection de trajectoire : bons fichiers lus d'abord ? séquence d'édition sensée ? bon outil/skill appelé ?

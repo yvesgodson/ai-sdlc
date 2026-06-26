@@ -38,6 +38,13 @@ l'humain decide ; tu n'installes jamais sans accord.
 Skills utilitaires de reference a connaitre : `frontend-design`, `skill-creator`,
 `code-review`, `deep-research`, et les skills « document » (docx/pdf/pptx).
 
+## Skills deja installees dans ce projet
+Inutile de les rechercher sur skills.sh, elles sont deja presentes dans `.claude/skills/` :
+- `frontend-design` — generateur UI PRINCIPAL (rendu sobre, bleu monochrome).
+- `high-end-visual-design` — inspiration premium (ombres, micro-interactions, typo), a temperer par la sobriete du projet.
+- `web-design-guidelines` — AUDIT du rendu UI/accessibilite (revue, Phase 4), pas un generateur.
+- `nodejs-backend-patterns` — bonnes pratiques backend Node (Zod, classes d'erreur, rate-limit, CORS, health checks).
+
 ## Interdits
 - Installer une skill sans accord humain explicite.
 - Recommander une skill sans avoir verifie son usage et sa reputation (installs/etoiles).

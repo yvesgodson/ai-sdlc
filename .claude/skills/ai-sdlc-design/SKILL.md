@@ -41,6 +41,12 @@ dégradés violets sur blanc, layouts génériques).
   (`animation-delay`) + micro-interactions sobres. TOUJOURS respecter `prefers-reduced-motion`.
 - **Accessibilité WCAG AA** : labels associés, focus visible, contraste >= 4.5:1, clavier complet.
 
+### Skills design — quand utiliser quoi
+Trois skills se chevauchent sur le design : voici la hiérarchie pour ce projet (direction sobre, bleu monochrome).
+- **`frontend-design` = générateur PRINCIPAL.** C'est lui qui produit le rendu, dans la direction du projet (sobre/raffinée, accent bleu). Toujours actif pour générer l'UI.
+- **`high-end-visual-design` = inspiration premium, tempérée.** À piocher pour le RAFFINEMENT seulement : ombres diffuses, micro-interactions et physique des transitions (cubic-bezier custom), rythme d'espacement, typo distinctive (éviter Inter/Roboto/Arial). NE PAS basculer en maximalisme : pas d'OLED `#050505`, pas de glassmorphism `backdrop-blur` généralisé, pas de mesh gradients ni de rotations de cartes. La sobriété du projet prime sur les opinions « agence ».
+- **`web-design-guidelines` = AUDIT, pas génération.** À lancer en REVUE du rendu (accessibilité/UX) une fois l'écran produit — pas pour créer l'UI. Outil de Phase 4 (cf. `ai-sdlc-test`).
+
 ## Porte de sortie
 - [ ] ADR pour chaque décision structurante.
 - [ ] Contrats API, schémas BDD, modèles de données figés dans `specs/`.
