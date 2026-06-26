@@ -37,5 +37,9 @@ Consomme un serveur MCP existant plutôt qu'un wrapper. Audite-le avant accès ;
 ## Backend / API
 Pour les routes, API et services Node (App Router, route handlers), applique la skill `nodejs-backend-patterns` : validation des entrées par Zod, classes d'erreur dédiées, rate-limit, CORS non-`*`, health checks, connection pooling. Cohérent avec nos règles (pas de secret en clair, variables d'environnement, vérifier les imports).
 
+## Frontières runtime & dépendances
+- **Client / serveur / edge** : la validation (Zod) et les types vont dans un module *client-safe* (aucun import serveur) ; la logique serveur (Prisma, bcrypt, secrets, `next/headers`) reste dans des modules importés uniquement côté serveur. Le **`middleware` tourne en edge** : il n'importe QUE des modules edge-safe (`jose` oui ; JAMAIS `next/headers`, Prisma, bcrypt, ni `server-only`). Garde les constantes et la crypto partagées (nom de cookie, signature de jeton) dans un module edge-safe distinct du module qui touche `next/headers` — sinon le build casse. Un import serveur tiré dans un composant client OU un import `next/headers` tiré dans le middleware sont les deux pièges recurrents.
+- **Dépendances** : avant d'épingler une version, vérifie ce qui est réellement publié (`npm view <pkg> version`) et choisis la majeure que tu sais supporter — ne recopie pas un numéro de mémoire (les majeures derivent : Prisma, zod, vitest…). N'ajoute une dépendance que **quand le lot courant l'utilise** (différer les autres) : install plus fiable, surface réduite. Avec Prisma, `prisma generate` doit précéder le build (script `build`).
+
 ## Skills utiles (skill-finder)
 Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : testing, TDD, code-review, refactor, debugging). Installe seulement apres accord humain.
