@@ -40,6 +40,14 @@ Pour les routes, API et services Node (App Router, route handlers), applique la 
 ## Frontières runtime & dépendances
 - **Client / serveur / edge** : la validation (Zod) et les types vont dans un module *client-safe* (aucun import serveur) ; la logique serveur (Prisma, bcrypt, secrets, `next/headers`) reste dans des modules importés uniquement côté serveur. Le **`middleware` tourne en edge** : il n'importe QUE des modules edge-safe (`jose` oui ; JAMAIS `next/headers`, Prisma, bcrypt, ni `server-only`). Garde les constantes et la crypto partagées (nom de cookie, signature de jeton) dans un module edge-safe distinct du module qui touche `next/headers` — sinon le build casse. Un import serveur tiré dans un composant client OU un import `next/headers` tiré dans le middleware sont les deux pièges recurrents.
 - **Dépendances** : avant d'épingler une version, vérifie ce qui est réellement publié (`npm view <pkg> version`) et choisis la majeure que tu sais supporter — ne recopie pas un numéro de mémoire (les majeures derivent : Prisma, zod, vitest…). N'ajoute une dépendance que **quand le lot courant l'utilise** (différer les autres) : install plus fiable, surface réduite. Avec Prisma, `prisma generate` doit précéder le build (script `build`).
+- **Effets de bord à l'import** : certaines libs exécutent du code au `require`/`import` (ex. `pdf-parse` v1 lit un PDF de test si `module.parent` est absent → crash sous bundler/vitest). Si une lib casse à l'import, importe son sous-module interne (`pdf-parse/lib/pdf-parse.js`) + une déclaration de types, plutôt que de contourner par un mock.
+
+## IA (sorties structurées)
+Pour toute sortie IA exploitée par le code (structuration, extraction, scoring), triple défense :
+1. **Prompt anti-hallucination** explicite : « n'invente rien, n'utilise que le texte fourni, laisse vide ce qui est absent ».
+2. **Sortie structurée du SDK** (`responseSchema` + `responseMimeType: application/json` pour Gemini) pour contraindre la forme.
+3. **Validation/normalisation Zod tolérante** côté serveur (champs manquants → valeurs vides) : ne jamais faire confiance au JSON du modèle tel quel.
+Isole l'appel derrière une **fonction de service** (`src/lib/ai/`) pour localiser un futur changement de fournisseur. Clé via variable d'environnement ; en prod, ne définir QUE la clé voulue (les SDK lisent parfois plusieurs noms, ex. `GOOGLE_API_KEY` vs `GEMINI_API_KEY`). Teste la partie pure (prompt/parse) en unitaire ; garde l'appel réseau dans un test d'intégration *gated* par la présence de la clé (ignoré sinon).
 
 ## Skills utiles (skill-finder)
 Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : testing, TDD, code-review, refactor, debugging). Installe seulement apres accord humain.
