@@ -8,15 +8,16 @@ description: Phase 1 du AI-SDLC — Planification. Transforme une intention mét
 
 ## Étapes
 1. Passe en mode plan (`Shift+Tab`).
-2. Lève l'ambiguïté : liste ce qui est flou (périmètre, utilisateurs, volumétrie, contraintes, cas limites), pose les questions, attends les réponses.
+2. Lève l'ambiguïté : liste ce qui est flou (périmètre, utilisateurs, volumétrie, contraintes, cas limites, **fournisseurs externes — IA, paiement, auth — à figer ICI** car en changer après coup est coûteux), pose les questions, attends les réponses. Si un **PRD/cadrage déjà validé existe** (autre projet, version antérieure), propose-le comme base au lieu de tout re-demander.
 3. Cadre : objectifs, non-objectifs explicites, capacités/features, risques majeurs.
 4. Écris les user stories (« En tant que… je veux… afin de… »).
 5. Écris les scénarios Gherkin par story (`Étant donné / Quand / Alors`) : nominal + erreur + cas limites.
-6. Matérialise dans `specs/` : `specs/README.md` (vision, modules, dépendances, glossaire) ; `specs/00X-<capacité>.md` (but, périmètre + non-goals, exigences Gherkin, contrats d'API, modèle de données, dépendances versions épinglées, critères d'acceptation vérifiables) ; `specs/adr/000X-<décision>.md` (contexte, options, décision, conséquences). Format : Markdown + YAML plat.
+6. Matérialise dans `specs/` : `specs/PRD.md` D'ABORD (problème, personas, objectifs + métriques de succès, périmètre/non-goals, contraintes, risques) ; puis `specs/README.md` (vision, modules, dépendances, glossaire) ; `specs/00X-<capacité>.md` (but, périmètre + non-goals, exigences Gherkin, contrats d'API, modèle de données, dépendances versions épinglées, critères d'acceptation vérifiables) ; `specs/adr/000X-<décision>.md` (contexte, options, décision, conséquences). Format : Markdown + YAML plat.
 7. Découpe en lots indépendants et ordonne l'implémentation.
 8. Route : par lot, complexité + modèle conseillé (Opus/Sonnet/Haiku) + posture (interactive vs déléguée).
 
 ## Porte de sortie
+- [ ] `specs/PRD.md` relu et validé (problème, personas, objectifs/métriques, périmètre, risques).
 - [ ] `specs/README.md` + une spec par capacité, critères d'acceptation vérifiables.
 - [ ] Non-goals écrits.
 - [ ] ADR pour chaque décision structurante.
