@@ -8,7 +8,7 @@ description: Phase 1 du AI-SDLC — Planification. Transforme une intention mét
 
 ## Étapes
 1. Passe en mode plan (`Shift+Tab`).
-2. Lève l'ambiguïté : liste ce qui est flou (périmètre, utilisateurs, volumétrie, contraintes, cas limites, **fournisseurs externes — IA, paiement, auth — à figer ICI** car en changer après coup est coûteux), pose les questions, attends les réponses. Si un **PRD/cadrage déjà validé existe** (autre projet, version antérieure), propose-le comme base au lieu de tout re-demander.
+2. Lève l'ambiguïté : liste ce qui est flou (périmètre, utilisateurs, volumétrie, contraintes, cas limites, **fournisseurs externes — IA, paiement, auth — à figer ICI** car en changer après coup est coûteux), pose les questions, attends les réponses.
 3. Cadre : objectifs, non-objectifs explicites, capacités/features, risques majeurs.
 4. Écris les user stories (« En tant que… je veux… afin de… »).
 5. Écris les scénarios Gherkin par story (`Étant donné / Quand / Alors`) : nominal + erreur + cas limites.
