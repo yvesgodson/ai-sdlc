@@ -24,6 +24,7 @@ l'humain decide ; tu n'installes jamais sans accord.
 5. **Presenter 1 a 3 options** : nom, ce qu'elle fait, nb d'installations, commande
    d'installation, lien `https://skills.sh/<owner>/<repo>/<skill>`.
 6. **Installer seulement apres accord humain.** Montrer le contenu de la skill avant.
+7. **Lire et ADAPTER, pas accumuler.** Une fois installee, LIS la skill et evalue si elle convient vraiment ; puis **adapte/internalise son contenu utile dans nos propres skills** (`ai-sdlc-*`). Ne garde une dependance tierce permanente QUE si elle apporte une capacite non internalisable (ex. outil d'audit live). Sinon : internalise puis desinstalle. Ne jamais installer « par convenance ».
 
 ## Mots-cles par etape du AI-SDLC
 | Phase | Rechercher (mots-cles) |
