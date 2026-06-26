@@ -36,7 +36,9 @@ dégradés violets sur blanc, layouts génériques).
   7. CTA final + footer.
 - **Copy minimal** : verbes d'action, orienté résultat, promesse de temps ; pas de superlatif mensonger. PAS de texte explicatif superflu dans l'UI — ne pas expliquer le fonctionnement interne (ex. « le texte est extrait puis structuré par l'IA… »). Microcopy courte ; au plus une ligne d'aide par champ.
 - **Contrôles natifs stylés** : jamais le rendu navigateur par défaut. Un `input[type=file]` devient une zone de dépôt (drag & drop) custom, pas « Choose File ». Idem select/checkbox/radio.
-- **Cohérence — chaque écran reçoit le MÊME soin** (pas seulement la landing) : en-tête de page uniforme (`h1` titre + sous-titre court `text-muted`), états vide/chargement/erreur soignés (icône + action), tokens de couleur cohérents (`text-ink`/`text-muted`, jamais `text-gray-*`), composants UI partagés réutilisés. Motifs récurrents à soigner : stepper multi-étapes, diff avant/après, barres de score, cartes cliquables (hover).
+- **Cohérence — chaque écran reçoit le MÊME soin** (pas seulement la landing) : en-tête de page uniforme (`h1` titre + sous-titre court `text-muted`), états vide/chargement/erreur soignés (icône + action), composants UI partagés réutilisés. Motifs récurrents à soigner : stepper multi-étapes, diff avant/après, barres de score, cartes cliquables (hover).
+- **Tokens, JAMAIS la palette par défaut** : toute couleur — y compris les fonds sémantiques (succès, danger, info) — vient d'un token défini dans `@theme` (`text-ink`/`text-muted`, `bg-success-50`, `bg-danger-50`…). Ne JAMAIS piocher dans la palette Tailwind par défaut (`bg-green-50`, `text-gray-*`, `red-500`) : cela casse la discipline monochrome et introduit des teintes hors charte. Si un fond sémantique manque, ajoute le token (`--color-success-50`, `--color-danger-50`) plutôt que d'utiliser un défaut.
+- **Factoriser les composants signature dès le 2e usage** : un élément de marque réutilisé (anneau de score, wordmark, badge de statut) devient un composant partagé à sa 2e apparition — ne pas copier-coller le balisage d'un écran à l'autre.
 - **Animations** : reveals au défilement (IntersectionObserver) + entrées échelonnées au chargement
   (`animation-delay`) + micro-interactions sobres. TOUJOURS respecter `prefers-reduced-motion`.
 - **Accessibilité WCAG AA** : labels associés, focus visible, contraste >= 4.5:1, clavier complet.
@@ -53,6 +55,7 @@ Trois skills se chevauchent sur le design : voici la hiérarchie pour ce projet 
 - [ ] Spec UI par écran (si UI).
 - [ ] Bundle de handoff reçu (ou MCP Figma branché).
 - [ ] Squelette échafaudé, versions épinglées.
+- [ ] **Maquette : build de production vert** — `rm -rf .next && <build prod>` passe sans erreur de compilation, de types ni de lint, toutes les routes générées. C'est la porte de sortie de la maquette : on ne la déclare pas « prête » sans build vert.
 
 ## Interdits
 - Décider l'architecture à la place de l'humain.
