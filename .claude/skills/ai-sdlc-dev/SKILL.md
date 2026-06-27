@@ -51,5 +51,10 @@ Isole l'appel derrière une **fonction de service** (`src/lib/ai/`) pour localis
 - **Éditions IA appliquées au contenu** : quand l'IA propose des réécritures à appliquer, cible par **correspondance exacte du texte** (`before`/`after`), pas par index (l'index hallucine) ; rends la fonction d'application pure et testable. Laisse l'utilisateur **accepter partiellement**. Après édition, **re-score le contenu réel** (nouvel appel) plutôt que d'afficher un score projeté fictif — un score doit toujours refléter l'état courant.
 - **Données factuelles = déterministes** : les champs factuels fournis par l'utilisateur (identité, e-mail, téléphone, dates) sont fixés côté code après la génération, jamais regénérés par l'IA (qui pourrait altérer un nom ou un e-mail). L'IA ne rédige/structure que le contenu rédactionnel (accroche, missions reformulées).
 
+## Droits & quotas
+- **Autorité serveur** : le plan effectif (gratuit/payant) et les quotas se calculent côté serveur (ex. paiement confirmé non expiré), jamais à partir d'un état client. Le webhook de paiement **vérifie la signature** du corps brut (HMAC timing-safe) avant toute activation ; idempotence sur la référence de transaction.
+- **Dégradation gracieuse** : quand un quota est atteint mais qu'une partie de la valeur reste livrable, dégrade plutôt que bloquer (ex. enregistrer les éditions de l'utilisateur en sautant seulement le re-calcul IA), au lieu d'un refus sec qui perdrait son travail.
+- **Mode stub** : un fournisseur externe non encore configuré (clés/compte absents) tourne derrière un port avec un stub activable en dev ; le flux réel est codé et attend les clés. `log`/documente le mode stub pour ne pas le confondre avec le réel.
+
 ## Skills utiles (skill-finder)
 Avant de coder a la main, verifie s'il existe une skill adaptee : invoque `skill-finder` (mots-cles : testing, TDD, code-review, refactor, debugging). Installe seulement apres accord humain.
